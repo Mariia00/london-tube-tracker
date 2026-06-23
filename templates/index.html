@@ -1,0 +1,212 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display a map</title>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="https://cdn.maptiler.com/maptiler-sdk-js/v4.0.2/maptiler-sdk.umd.min.js"></script>
+  <link href="https://cdn.maptiler.com/maptiler-sdk-js/v4.0.2/maptiler-sdk.css" rel="stylesheet" />
+  
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    const socket = io();
+      maptilersdk.config.apiKey = 'bOPMwtf6CWBOR77dfV9D';
+      const map = new maptilersdk.Map({
+        container: 'map', // container's id or the HTML element to render the map
+        style: maptilersdk.MapStyle.STREETS,
+      });
+       map.on('load', async function() {
+        const geojson = {
+      'type': 'FeatureCollection',
+      'features': [
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'LineString',
+            'properties': {},
+            'coordinates': [
+              [-77.0366048812866, 38.89873175227713],
+              [-77.03364372253417, 38.89876515143842],
+              [-77.03364372253417, 38.89549195896866],
+              [-77.02982425689697, 38.89549195896866],
+              [-77.02400922775269, 38.89387200688839],
+              [-77.01519012451172, 38.891416957534204],
+              [-77.01521158218382, 38.892068305429156],
+              [-77.00813055038452, 38.892051604275686],
+              [-77.00832366943358, 38.89143365883688],
+              [-77.00818419456482, 38.89082405874451],
+              [-77.00815200805664, 38.88989712255097]
+            ]
+          }
+        }
+      ]
+    };
+        map.addSource('gps_tracks', {
+          'type': 'geojson',
+          'data': geojson
+        });
+        map.addLayer({
+          'id': 'grand_teton',
+          'type': 'line',
+          'source': 'gps_tracks',
+          'layout': {},
+          'paint': {
+            'line-color': '#e11',
+            'line-width': 4
+          }
+        });
+      });
+  </script>
+  <script src="https://cdn.socket.io/4.8.3/socket.io.min.js" integrity="sha384-kzavj5fiMwLKzzD1f8S7TeoVIEi7uKHvbTA3ueZkrzYq75pNQUiUi6Dy98Q3fxb0" crossorigin="anonymous"></script>
+
+</body>
+</html> -->
+
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fit to the bounds of a LineString</title>
+  <script src="https://cdn.maptiler.com/maptiler-sdk-js/v4.0.2/maptiler-sdk.umd.min.js"></script>
+  <link href="https://cdn.maptiler.com/maptiler-sdk-js/v4.0.2/maptiler-sdk.css" rel="stylesheet" /> 
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .btn-control {
+      font: bold 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      background-color: #3386c0;
+      color: #fff;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      z-index: 1;
+      border: none;
+      width: 200px;
+      margin-left: -100px;
+      display: block;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 3px;
+    }
+
+    .btn-control:hover {
+      background-color: #4ea0da;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <button id="zoomto" class="btn-control">Zoom to bounds</button>
+
+  <script type="module">
+    async function getStationsForLines() {
+      const response = await fetch('/api/routes');
+      const data = await response.json();
+      return data;
+    }
+
+    const stations = await getStationsForLines();
+    console.log('Stations:', stations);
+
+    maptilersdk.config.apiKey = "{{ maptiler_api_key }}";
+    // A GeoJSON object with a LineString route from the White House to Capitol Hill
+    let coordinates = []
+
+    for (const station of stations) {
+     coordinates.push([station.lon, station.lat]);
+
+    }
+    const geojson = {
+      'type': 'FeatureCollection',
+      'features': [
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'LineString',
+            'properties': {},
+            'coordinates': coordinates
+          }
+        }
+      ]
+    };
+
+    const map = new maptilersdk.Map({
+      container: 'map',
+      style: maptilersdk.MapStyle.STREETS,
+      center: [-0.1278, 51.5074], // London coordinates
+      zoom: 12
+    });
+    
+
+    map.on('load', function () {
+      // const marker = new maptilersdk.Marker({
+      //   color: "red",
+      //   draggable: true
+      //   }).setLngLat([-0.04115, 51.586919]) ///
+      //   .addTo(map);
+      map.addSource('LineString', {
+        'type': 'geojson',
+        'data': geojson
+      });
+      map.addLayer({
+        'id': 'LineString',
+        'type': 'line',
+        'source': 'LineString',
+        'layout': {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        'paint': {
+          'line-color': '#BF93E4',
+          'line-width': 5
+        }
+      });
+
+      document
+        .getElementById('zoomto')
+        .addEventListener('click', function () {
+          // Geographic coordinates of the LineString
+          const coordinates = geojson.features[0].geometry.coordinates;
+
+          // Pass the first coordinates in the LineString to `lngLatBounds` &
+          // wrap each coordinate pair in `extend` to include them in the bounds
+          // result. A variation of this technique could be applied to zooming
+          // to the bounds of multiple Points or Polygon geomteries - it just
+          // requires wrapping all the coordinates with the extend method.
+          const bounds = coordinates.reduce(function (bounds, coord) {
+            return bounds.extend(coord);
+          }, new maptilersdk.LngLatBounds(coordinates[0], coordinates[0]));
+
+          map.fitBounds(bounds, {
+            padding: 20
+          });
+        });
+        
+        
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_231f0db0dc0cdde67cdd99582be92a1e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_231f0db0dc0cdde67cdd99582be92a1e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_231f0db0dc0cdde67cdd99582be92a1e = L.map(
+                "map_231f0db0dc0cdde67cdd99582be92a1e",
+                {
+                    center: [51.5074, -0.1278],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6557773d2201879f53d0eee4af80d4af = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6557773d2201879f53d0eee4af80d4af.addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+            var marker_0fe59b4b2aa4066ff05ab4379359c6da = L.marker(
+                [51.582965, -0.019885],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_81156323c6af87d8ee0c37397aa50173 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46040354fcece15ff4952ff06aea6dbb = $(`<div id="html_46040354fcece15ff4952ff06aea6dbb" style="width: 100.0%; height: 100.0%;">Walthamstow Central Underground Station (940GZZLUWWL)<br>Line: Victoria</div>`)[0];
+                popup_81156323c6af87d8ee0c37397aa50173.setContent(html_46040354fcece15ff4952ff06aea6dbb);
+            
+        
+
+        marker_0fe59b4b2aa4066ff05ab4379359c6da.bindPopup(popup_81156323c6af87d8ee0c37397aa50173)
+        ;
+
+        
+    
+    
+            marker_0fe59b4b2aa4066ff05ab4379359c6da.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8480e836df50e608b1f7d326fabb0243 = L.marker(
+                [51.586919, -0.04115],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_02ffe44337c8eb85ade34fa81c575445 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_082cc5f29042315a049ae0854209b40f = $(`<div id="html_082cc5f29042315a049ae0854209b40f" style="width: 100.0%; height: 100.0%;">Blackhorse Road Underground Station (940GZZLUBLR)<br>Line: Victoria</div>`)[0];
+                popup_02ffe44337c8eb85ade34fa81c575445.setContent(html_082cc5f29042315a049ae0854209b40f);
+            
+        
+
+        marker_8480e836df50e608b1f7d326fabb0243.bindPopup(popup_02ffe44337c8eb85ade34fa81c575445)
+        ;
+
+        
+    
+    
+            marker_8480e836df50e608b1f7d326fabb0243.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_78efd702927686f54bad6a65edcfbd74 = L.marker(
+                [51.588108, -0.060241],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_2f5c5dd4ea93734d782a40e7024ec827 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e717c787928db2405cce20807a7a5146 = $(`<div id="html_e717c787928db2405cce20807a7a5146" style="width: 100.0%; height: 100.0%;">Tottenham Hale Underground Station (940GZZLUTMH)<br>Line: Victoria</div>`)[0];
+                popup_2f5c5dd4ea93734d782a40e7024ec827.setContent(html_e717c787928db2405cce20807a7a5146);
+            
+        
+
+        marker_78efd702927686f54bad6a65edcfbd74.bindPopup(popup_2f5c5dd4ea93734d782a40e7024ec827)
+        ;
+
+        
+    
+    
+            marker_78efd702927686f54bad6a65edcfbd74.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4fd62479e383be9820201043ff3b1d56 = L.marker(
+                [51.58333, -0.072584],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_6ded34b1072828ab865c6cd0a5cadd8e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98cdecdf9179ec950081a6daeed2c6cf = $(`<div id="html_98cdecdf9179ec950081a6daeed2c6cf" style="width: 100.0%; height: 100.0%;">Seven Sisters Underground Station (940GZZLUSVS)<br>Line: Victoria</div>`)[0];
+                popup_6ded34b1072828ab865c6cd0a5cadd8e.setContent(html_98cdecdf9179ec950081a6daeed2c6cf);
+            
+        
+
+        marker_4fd62479e383be9820201043ff3b1d56.bindPopup(popup_6ded34b1072828ab865c6cd0a5cadd8e)
+        ;
+
+        
+    
+    
+            marker_4fd62479e383be9820201043ff3b1d56.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a4cdcb4940e644906320cd9bfd9d99b1 = L.marker(
+                [51.564158, -0.106825],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_8530ce82265dfcfb16a486ff07640cfb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c9190ca51a744b5c9e0f2dfd32a9754 = $(`<div id="html_0c9190ca51a744b5c9e0f2dfd32a9754" style="width: 100.0%; height: 100.0%;">Finsbury Park Underground Station (940GZZLUFPK)<br>Line: Victoria</div>`)[0];
+                popup_8530ce82265dfcfb16a486ff07640cfb.setContent(html_0c9190ca51a744b5c9e0f2dfd32a9754);
+            
+        
+
+        marker_a4cdcb4940e644906320cd9bfd9d99b1.bindPopup(popup_8530ce82265dfcfb16a486ff07640cfb)
+        ;
+
+        
+    
+    
+            marker_a4cdcb4940e644906320cd9bfd9d99b1.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0190ee144101aa5651611bc76b0c1dae = L.marker(
+                [51.54635, -0.103324],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_09ddc845636caa5a8d636ae56e865c87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_571cfbfba935463ed65feadbc9a51b21 = $(`<div id="html_571cfbfba935463ed65feadbc9a51b21" style="width: 100.0%; height: 100.0%;">Highbury & Islington Underground Station (940GZZLUHAI)<br>Line: Victoria</div>`)[0];
+                popup_09ddc845636caa5a8d636ae56e865c87.setContent(html_571cfbfba935463ed65feadbc9a51b21);
+            
+        
+
+        marker_0190ee144101aa5651611bc76b0c1dae.bindPopup(popup_09ddc845636caa5a8d636ae56e865c87)
+        ;
+
+        
+    
+    
+            marker_0190ee144101aa5651611bc76b0c1dae.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7a7fe7f917ee7b5187be4ad26a066002 = L.marker(
+                [51.530663, -0.123194],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_6e5e2cd43dba48549da8ea8ccb50fd0c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_16093deab4fa708bdb09e42ae671bdc3 = $(`<div id="html_16093deab4fa708bdb09e42ae671bdc3" style="width: 100.0%; height: 100.0%;">King's Cross St. Pancras Underground Station (940GZZLUKSX)<br>Line: Victoria</div>`)[0];
+                popup_6e5e2cd43dba48549da8ea8ccb50fd0c.setContent(html_16093deab4fa708bdb09e42ae671bdc3);
+            
+        
+
+        marker_7a7fe7f917ee7b5187be4ad26a066002.bindPopup(popup_6e5e2cd43dba48549da8ea8ccb50fd0c)
+        ;
+
+        
+    
+    
+            marker_7a7fe7f917ee7b5187be4ad26a066002.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_64e71b92a64bc2dcb5a2924e42105f8a = L.marker(
+                [51.527999, -0.133785],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_bf4f273e75b1e344606825a6a6052279 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53da09fea346283724a702c670f29f1c = $(`<div id="html_53da09fea346283724a702c670f29f1c" style="width: 100.0%; height: 100.0%;">Euston Underground Station (940GZZLUEUS)<br>Line: Victoria</div>`)[0];
+                popup_bf4f273e75b1e344606825a6a6052279.setContent(html_53da09fea346283724a702c670f29f1c);
+            
+        
+
+        marker_64e71b92a64bc2dcb5a2924e42105f8a.bindPopup(popup_bf4f273e75b1e344606825a6a6052279)
+        ;
+
+        
+    
+    
+            marker_64e71b92a64bc2dcb5a2924e42105f8a.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_181608f4c10f995611b6b136432387ad = L.marker(
+                [51.524951, -0.138321],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_8965ba435e91b08e612f36b44581cb81 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3dc0840eb5e8b1dd0295bd572e1198e = $(`<div id="html_a3dc0840eb5e8b1dd0295bd572e1198e" style="width: 100.0%; height: 100.0%;">Warren Street Underground Station (940GZZLUWRR)<br>Line: Victoria</div>`)[0];
+                popup_8965ba435e91b08e612f36b44581cb81.setContent(html_a3dc0840eb5e8b1dd0295bd572e1198e);
+            
+        
+
+        marker_181608f4c10f995611b6b136432387ad.bindPopup(popup_8965ba435e91b08e612f36b44581cb81)
+        ;
+
+        
+    
+    
+            marker_181608f4c10f995611b6b136432387ad.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f23cce11e24f860e6b4b7e80a4e2a92b = L.marker(
+                [51.515224, -0.141903],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_7c2158880d65f88e93afdfdec314863c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b369281b0583ff19173d420a14684d72 = $(`<div id="html_b369281b0583ff19173d420a14684d72" style="width: 100.0%; height: 100.0%;">Oxford Circus Underground Station (940GZZLUOXC)<br>Line: Victoria</div>`)[0];
+                popup_7c2158880d65f88e93afdfdec314863c.setContent(html_b369281b0583ff19173d420a14684d72);
+            
+        
+
+        marker_f23cce11e24f860e6b4b7e80a4e2a92b.bindPopup(popup_7c2158880d65f88e93afdfdec314863c)
+        ;
+
+        
+    
+    
+            marker_f23cce11e24f860e6b4b7e80a4e2a92b.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ac3eed0a195710d81299f63d9208792c = L.marker(
+                [51.506947, -0.142787],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_da929a73f74c33148370f131a93a3798 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c8d381fb38e441ba3b059d9201a5ced2 = $(`<div id="html_c8d381fb38e441ba3b059d9201a5ced2" style="width: 100.0%; height: 100.0%;">Green Park Underground Station (940GZZLUGPK)<br>Line: Victoria</div>`)[0];
+                popup_da929a73f74c33148370f131a93a3798.setContent(html_c8d381fb38e441ba3b059d9201a5ced2);
+            
+        
+
+        marker_ac3eed0a195710d81299f63d9208792c.bindPopup(popup_da929a73f74c33148370f131a93a3798)
+        ;
+
+        
+    
+    
+            marker_ac3eed0a195710d81299f63d9208792c.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_702d88e41d0fbfea38722d9799446e63 = L.marker(
+                [51.496359, -0.143102],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_ecca3d4e4d24385c666323bd70d86ce2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07c29d29e77448858f36ffae29c333c4 = $(`<div id="html_07c29d29e77448858f36ffae29c333c4" style="width: 100.0%; height: 100.0%;">Victoria Underground Station (940GZZLUVIC)<br>Line: Victoria</div>`)[0];
+                popup_ecca3d4e4d24385c666323bd70d86ce2.setContent(html_07c29d29e77448858f36ffae29c333c4);
+            
+        
+
+        marker_702d88e41d0fbfea38722d9799446e63.bindPopup(popup_ecca3d4e4d24385c666323bd70d86ce2)
+        ;
+
+        
+    
+    
+            marker_702d88e41d0fbfea38722d9799446e63.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d48793755f276027e5c85e3b7108c03a = L.marker(
+                [51.489097, -0.133761],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_e819db47346cb95b0dfed2611db57e50 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2da4dbd92826835d0bd95396c56d0c6 = $(`<div id="html_f2da4dbd92826835d0bd95396c56d0c6" style="width: 100.0%; height: 100.0%;">Pimlico Underground Station (940GZZLUPCO)<br>Line: Victoria</div>`)[0];
+                popup_e819db47346cb95b0dfed2611db57e50.setContent(html_f2da4dbd92826835d0bd95396c56d0c6);
+            
+        
+
+        marker_d48793755f276027e5c85e3b7108c03a.bindPopup(popup_e819db47346cb95b0dfed2611db57e50)
+        ;
+
+        
+    
+    
+            marker_d48793755f276027e5c85e3b7108c03a.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_161b64dca880bbbbd40e489f1421db01 = L.marker(
+                [51.485743, -0.124204],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_2ca91fc9bdcbcb303304fbc88bdc871e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_922b41f56d10aaac7cbbb7b847adddc4 = $(`<div id="html_922b41f56d10aaac7cbbb7b847adddc4" style="width: 100.0%; height: 100.0%;">Vauxhall Underground Station (940GZZLUVXL)<br>Line: Victoria</div>`)[0];
+                popup_2ca91fc9bdcbcb303304fbc88bdc871e.setContent(html_922b41f56d10aaac7cbbb7b847adddc4);
+            
+        
+
+        marker_161b64dca880bbbbd40e489f1421db01.bindPopup(popup_2ca91fc9bdcbcb303304fbc88bdc871e)
+        ;
+
+        
+    
+    
+            marker_161b64dca880bbbbd40e489f1421db01.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b0dfe715446c31a49ca8ac948606f405 = L.marker(
+                [51.472184, -0.122644],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_cea7c6172bfedb436cc194640ae05b05 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_228228d389d17eb1970dbcc040afcbe6 = $(`<div id="html_228228d389d17eb1970dbcc040afcbe6" style="width: 100.0%; height: 100.0%;">Stockwell Underground Station (940GZZLUSKW)<br>Line: Victoria</div>`)[0];
+                popup_cea7c6172bfedb436cc194640ae05b05.setContent(html_228228d389d17eb1970dbcc040afcbe6);
+            
+        
+
+        marker_b0dfe715446c31a49ca8ac948606f405.bindPopup(popup_cea7c6172bfedb436cc194640ae05b05)
+        ;
+
+        
+    
+    
+            marker_b0dfe715446c31a49ca8ac948606f405.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1c027fc603ce585ead58b00422410c7b = L.marker(
+                [51.462618, -0.114888],
+                {
+}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+        var popup_0578ad394ca479d865ef7023e2f233a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93ffba956ebacbbc000714c6f3dcf05e = $(`<div id="html_93ffba956ebacbbc000714c6f3dcf05e" style="width: 100.0%; height: 100.0%;">Brixton Underground Station (940GZZLUBXN)<br>Line: Victoria</div>`)[0];
+                popup_0578ad394ca479d865ef7023e2f233a1.setContent(html_93ffba956ebacbbc000714c6f3dcf05e);
+            
+        
+
+        marker_1c027fc603ce585ead58b00422410c7b.bindPopup(popup_0578ad394ca479d865ef7023e2f233a1)
+        ;
+
+        
+    
+    
+            marker_1c027fc603ce585ead58b00422410c7b.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ef661da9b819aa5293b16941f11a0f43 = L.polyline(
+                [[51.582965, -0.019885], [51.586919, -0.04115], [51.588108, -0.060241], [51.58333, -0.072584], [51.564158, -0.106825], [51.54635, -0.103324], [51.530663, -0.123194], [51.527999, -0.133785], [51.524951, -0.138321], [51.515224, -0.141903], [51.506947, -0.142787], [51.496359, -0.143102], [51.489097, -0.133761], [51.485743, -0.124204], [51.472184, -0.122644], [51.462618, -0.114888]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_231f0db0dc0cdde67cdd99582be92a1e);
+        
+    
+            poly_line_ef661da9b819aa5293b16941f11a0f43.bindTooltip(
+                `<div>
+                     Victoria Line inbound
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
