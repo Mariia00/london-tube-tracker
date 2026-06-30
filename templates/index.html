@@ -121,24 +121,40 @@
   <button id="zoomto" class="btn-control">Zoom to bounds</button>
 
   <script type="module">
-    async function getStationsForLines() {
-      const response = await fetch('/api/routes');
+    async function getStationsForLines(lineName) {
+      const response = await fetch(`/api/routes/${lineName}`);
       const data = await response.json();
       return data;
     }
 
-    const stations = await getStationsForLines();
-    console.log('Stations:', stations);
+  
 
     maptilersdk.config.apiKey = "{{ maptiler_api_key }}";
     // A GeoJSON object with a LineString route from the White House to Capitol Hill
-    let coordinates = []
+    let victoria_line = []
 
-    for (const station of stations) {
-     coordinates.push([station.lon, station.lat]);
+    for (const station of await getStationsForLines('victoria')){
+     victoria_line.push([station.lon, station.lat]);
 
     }
-    const geojson = {
+
+    let bakerloo_line = []
+
+    for (const station of await getStationsForLines('bakerloo')){
+     bakerloo_line.push([station.lon, station.lat]);
+
+    }
+
+    let elizabeth_line = []
+
+    for (const station of await getStationsForLines('elizabeth')){
+     elizabeth_line.push([station.lon, station.lat]);
+
+    }
+    
+    
+    function drawRoute(map, coordinates, name){
+      const geojson = {
       'type': 'FeatureCollection',
       'features': [
         {
@@ -151,7 +167,24 @@
         }
       ]
     };
-
+      map.addSource(name, {
+        'type': 'geojson',
+        'data': geojson
+      });
+      map.addLayer({
+        'id': name,
+        'type': 'line',
+        'source': name,
+        'layout': {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        'paint': {
+          'line-color': '#BF93E4',
+          'line-width': 5
+        }
+      });
+    }
     const map = new maptilersdk.Map({
       container: 'map',
       style: maptilersdk.MapStyle.STREETS,
@@ -166,23 +199,12 @@
       //   draggable: true
       //   }).setLngLat([-0.04115, 51.586919]) ///
       //   .addTo(map);
-      map.addSource('LineString', {
-        'type': 'geojson',
-        'data': geojson
-      });
-      map.addLayer({
-        'id': 'LineString',
-        'type': 'line',
-        'source': 'LineString',
-        'layout': {
-          'line-join': 'round',
-          'line-cap': 'round'
-        },
-        'paint': {
-          'line-color': '#BF93E4',
-          'line-width': 5
-        }
-      });
+
+      drawRoute(map, victoria_line, "victoria");
+
+      drawRoute(map, bakerloo_line, "bakerloo");
+
+      drawRoute(map, elizabeth_line, "elizabeth");
 
       document
         .getElementById('zoomto')

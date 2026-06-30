@@ -18,9 +18,9 @@ def serve_index():
     return render_template('index.html', maptiler_api_key=os.getenv("MAPTILER_API_KEY"))
     return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/api/routes')
-def serve_routes():
-    return jsonify(get_route("victoria"))
+@app.route('/api/routes/<line_name>')
+def serve_routes(line_name):
+    return jsonify(get_route(line_name))
 
 @socketio.on('connect')
 def handle_connect():
