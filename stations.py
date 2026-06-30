@@ -11,30 +11,48 @@ load_dotenv()
 APP_ID = os.getenv("TFL_APP_ID")
 APP_KEY = os.getenv("TFL_APP_KEY")
 
-
-def get_stations_for_lines(line_name):
-    params = {
+params = {
     "app_id": APP_ID,
     "app_key": APP_KEY
-    }
+}
 
-    url_line = f"https://api.tfl.gov.uk/Line/{line_name}/StopPoints"
+
+
+
+def get_route(line_name):
+    url_line = f"https://api.tfl.gov.uk/Line/{line_name}/Route/Sequence/All"
+
+
     response = requests.get(url_line, params=params)
     data = response.json()
+    
+    
+    ordered_lines = data["orderedLineRoutes"][0]["naptanIds"]
+    stations = data["stopPointSequences"][0]["stopPoint"]
+    stations_dict = {}
+    for station in stations:
+        stations_dict[station["stationId"]] = station
+        print(station)
+  
 
-    return data
+
 
     output = []
-    for station in data:
+    for station_id in ordered_lines:
+        station = stations_dict.get(station_id, None)
+        if station is None:
+            continue
+
         output.append({
             "id": station["id"],
-            "name": station["commonName"],
+            "name": station["name"],
             "lat": station["lat"],
             "lon": station["lon"]
             
             
         })
     return output
+
 
 
     

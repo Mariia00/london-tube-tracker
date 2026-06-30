@@ -1,26 +1,41 @@
-numbers = {1, 2, 3, 3}
+# numbers = {1, 2, 3, 3}
 
-print(numbers)
+# print(numbers)
 
-nums = [1, 2, 2, 3]
+# nums = [1, 2, 2, 3]
 
-print(list(set(nums)))
+# print(list(set(nums)))
 
-a = [1, 2, 3]
-b = a
+# a = [1, 2, 3]
+# b = a
 
-a.append([4, 5])
+# a.append([4, 5])
 
-print(a)
-print(b)
+# print(a)
+# print(b)
 
-word = "Hello, Ava"
-print(list(word))
+# word = "Hello, Ava"
+# print(list(word))
 
-words = 'SCIENCE TEXT CORPORATE'
-words.split(' ')
-#words.capitalize()
-print(words)
+# words = 'SCIENCE TEXT CORPORATE'
+# words.split(' ')
+# #words.capitalize()
+# print(words)
 
+# def info(word):
+#     print(word, end="")
+#     print("!")
+    
+
+
+# def summa(a, b):
+#     res = a + b
+#     info(res)
+#     return res
+
+
+# summa(5, 6)
+# res = summa(5, 6)
+# print(res)
 
 

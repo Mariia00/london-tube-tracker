@@ -4,3 +4,6 @@
 1.3 Now you have a list of lon, lat coordinates to send to the client.
 2. Send this data over a socket OR api call to the client.
 2.1 On socket connection send over the list of lon, lat coordinates.
+---------
+
+1. Look into GET https://api.tfl.gov.uk/Line/{line}/Route/Sequence/{direction} , should have the same data that we were getting from the old endpoint but it should have the correct order. The existing endpoint draws points in the wrong order, so the lines go everywhere.

@@ -44,7 +44,7 @@ def get_inbound_stations(line_name):
     data = response.json()
     print(data.keys())
     # print(data["lineStrings"])
-    sys.exit()
+    #sys.exit()
 
 
     

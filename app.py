@@ -3,8 +3,9 @@ from dotenv import load_dotenv
 from flask import send_from_directory
 from flask import Flask, jsonify
 from flask_socketio import SocketIO, emit
-from stations import get_stations_for_lines
+from stations import  get_route
 from flask import Flask, render_template
+
 
 
 load_dotenv()
@@ -19,7 +20,7 @@ def serve_index():
 
 @app.route('/api/routes')
 def serve_routes():
-    return jsonify(get_stations_for_lines("victoria"))
+    return jsonify(get_route("victoria"))
 
 @socketio.on('connect')
 def handle_connect():
